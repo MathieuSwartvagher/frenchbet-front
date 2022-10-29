@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Layout from './components/Layout';
+import { Route, Routes } from 'react-router';
+import Compare from './components/Compare';
+import Main from './components/Main';
+import { UserStat } from './components/UserStat';
+import { ReactKeycloakProvider } from "@react-keycloak/web";
+import keycloak from "./components/Keycloak";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReactKeycloakProvider authClient={keycloak}>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Main/>} />
+          <Route path='/compare' element={ <PrivateRoute> <Compare/> </PrivateRoute> } />
+          <Route path='/user-stat' element={ <PrivateRoute> <UserStat/> </PrivateRoute> } />
+        </Routes>
+      </Layout>
+    </ReactKeycloakProvider>
   );
 }
 
