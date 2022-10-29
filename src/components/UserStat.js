@@ -145,7 +145,7 @@ export class UserStat extends Component {
     }
 
     async getDictionary() {
-        const response = await fetch('http://13.80.243.107:5000/Community/Get');
+        const response = await fetch('https://frenchbet.perseflore.com/Community/Get');
         const data = await response.json();
         let a = [];
         for (var i in data) {
@@ -167,7 +167,7 @@ export class UserStat extends Component {
 
     async findUser() {
         /*const response = */
-        await fetch('http://13.80.243.107:5000/Community/GetUser',
+        await fetch('https://frenchbet.perseflore.com/Community/GetUser',
             {
                 method: 'post',
                 headers: {
