@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Compare() {
+const Compare = () => {
     return (
         <div className="choice">
             <div id="modChoice">

@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import { Route, Routes } from 'react-router';
 import Compare from './components/Compare';
 import Main from './components/Main';
-import { UserStat } from './components/UserStat';
+import UserStat from './components/UserStat';
 import { ReactKeycloakProvider } from "@react-keycloak/web";
 import keycloak from "./components/Keycloak";
 import PrivateRoute from "./components/PrivateRoute";

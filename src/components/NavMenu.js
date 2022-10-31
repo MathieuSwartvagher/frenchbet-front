@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useKeycloak } from "@react-keycloak/web";
 
-function NavMenu() {
+const NavMenu = () => {
     const { keycloak, initialized } = useKeycloak();
 
     return (
